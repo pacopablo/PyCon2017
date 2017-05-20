@@ -7,6 +7,28 @@ class Class(object):
     Implement this class to make the test pass
     Hint: keep running the test!
     """
+    def __init__(self, s=''):
+        """ Class constructor. """
+        self.s = s
+
+    def bueller_bueller(self, j=0):
+        """ Bueller? Bueller?
+
+        I feel that there is a better way to do this where I implement __next__ or some such.  But movie references
+        are soo much better
+
+        """
+
+        for x in range(j):
+            yield self.s
+
+    def __call__(self, i=0):
+        """ Around and Around we go
+
+        """
+        for x in range(i):
+            yield self.bueller_bueller
+
 
 
 class Test(unittest.TestCase):
